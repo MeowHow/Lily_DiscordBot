@@ -11,5 +11,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MeowHow",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeowHow/Lily_DiscordBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MeowHow/Lily_DiscordBot/issues"
+  },
+  "homepage": "https://github.com/MeowHow/Lily_DiscordBot#readme"
 }
