@@ -179,12 +179,11 @@ client.on('message', async (msg) => {
 					]
 				});
 			*/
-			msg.channel.send('又想壞壞？抱歉這裡只剩下一隻炸蝦。');
-			msg.channel.send({
-					files: [
-						"./source/炸蝦.jpg"
-					]
-				});
+			msg.channel.send('又想壞壞？抱歉這裡只剩下一隻炸蝦。',{
+				files: [
+					"./source/炸蝦.jpg"
+				]
+			});
 		
 			break;
 		
