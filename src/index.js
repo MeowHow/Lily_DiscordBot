@@ -157,7 +157,6 @@ client.on('message', async (msg) => {
 			//makeChannel(msg);
 		}
 		
-		
 		/*else if(st.indexOf("蘭蘭我婆") != -1){
 			if(msg.author.id == '279250173979525121') {
 				msg.channel.send('穩妥LA');
