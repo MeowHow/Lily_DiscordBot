@@ -1,0 +1,5 @@
+npm init
+--建立package.json--
+npm i discord.js
+npm i dotenv
+--環境--
