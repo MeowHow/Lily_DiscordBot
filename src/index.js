@@ -1,4 +1,10 @@
 console.clear();
+/*
+git remote -v
+git add .
+git commit -m ''
+git push
+*/
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
