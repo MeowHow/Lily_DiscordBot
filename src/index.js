@@ -18,7 +18,7 @@ client.login(process.env.MyTOKEN);
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
-var oldTime = myDate.getMinutes();
+var oldTime = 0;
 
 client.on('ready', () => {	
 	try {
