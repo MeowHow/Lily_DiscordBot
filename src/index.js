@@ -103,7 +103,7 @@ client.on('message', async (msg) => {
 					//"./source/心動的感覺-2.png"
 				]
 			});
-		} else if(st.indexOf("不詐寢") != -1){
+		} else if(st.indexOf("不詐寢") != -1 || st.indexOf("不會詐寢") != -1){
 			msg.channel.send({
 				files: [
 					"./source/詐寢.png"
