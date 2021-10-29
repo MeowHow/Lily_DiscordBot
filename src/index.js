@@ -96,6 +96,12 @@ client.on('message', async (msg) => {
 					"./source/exe_.gif"
 				]
 			});
+		} else if(st.indexOf("我有信仰") != -1){
+			msg.channel.send({
+				files: [
+					"./source/克蘇魯天父.jpg"
+				]
+			});
 		} else if(st.indexOf("心動的感覺") != -1){
 			msg.channel.send({
 				files: [
@@ -221,14 +227,6 @@ client.on('message', async (msg) => {
 				msg.channel.send({
 					files: [
 						"./source/上車囉.gif"
-					]
-				});
-			break;
-		
-			case '我有信仰':
-				msg.channel.send({
-					files: [
-						"./source/克蘇魯天父.jpg"
 					]
 				});
 			break;
