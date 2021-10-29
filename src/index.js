@@ -103,10 +103,16 @@ client.on('message', async (msg) => {
 					//"./source/心動的感覺-2.png"
 				]
 			});
-		}  else if(st.indexOf("詐寢") != -1){
+		} else if(st.indexOf("不詐寢") != -1){
 			msg.channel.send({
 				files: [
 					"./source/詐寢.png"
+				]
+			});
+		} else if(st.indexOf("詐寢") != -1){
+			msg.channel.send({
+				files: [
+					"./source/詐寢剪掉.png"
 				]
 			});
 		} else if(st.indexOf("女友") != -1){
@@ -159,6 +165,8 @@ client.on('message', async (msg) => {
 					"./source/進來.png"
 				]
 			});
+		} else if(st.indexOf("好吃魔法") != -1){
+			msg.reply('萌欸萌欸～啾～:heart:');
 		} else if(st.indexOf("開房") != -1){
 			//makeChannel(msg);
 		}
@@ -283,6 +291,14 @@ client.on('message', async (msg) => {
 				msg.reply({
 					files: [
 						"./source/Doctor.mov"
+					]
+				});
+			break;
+
+			case '貓豪有病':
+				msg.channel.send({
+					files: [
+						"./source/貓豪有病.png"
 					]
 				});
 			break;
