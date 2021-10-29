@@ -96,7 +96,7 @@ client.on('message', async (msg) => {
 					"./source/exe_.gif"
 				]
 			});
-		} else if(st.indexOf("我有信仰") != -1){
+		} else if(st.indexOf("信仰") != -1){
 			msg.channel.send({
 				files: [
 					"./source/克蘇魯天父.jpg"
