@@ -112,7 +112,7 @@ client.on('message', async (msg) => {
 		} else if(st.indexOf("詐寢") != -1){
 			msg.channel.send({
 				files: [
-					"./source/詐寢剪掉.png"
+					"./source/詐寢剪掉.jpg"
 				]
 			});
 		} else if(st.indexOf("女友") != -1){
