@@ -4,6 +4,7 @@ git remote -v
 git add .
 git commit -m ''
 git push
+git clean -fx
 */
 const Discord = require('discord.js');
 const intents = new Discord.Intents(32767);
@@ -40,6 +41,7 @@ var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
 var oldTime = 0;
+var fire = false;
 
 client.on('ready', () => {	
 	try {
@@ -196,8 +198,7 @@ client.on('message', async (msg) => {
 			});
 		} else if(st.indexOf("好吃魔法") != -1){
 			msg.reply('萌欸萌欸～啾～:heart:');
-		} else if(st.indexOf("嗨") != -1){
-			/*
+		} else if(st.indexOf("嗨糯米") != -1 || st.indexOf("嗨茶几") != -1){
 			myDate = new Date();
 			newTime = myDate.getMinutes();
 			if(newTime - oldTime >= 1){
@@ -208,7 +209,6 @@ client.on('message', async (msg) => {
 					});
 				oldTime = newTime;
 			}
-			*/
 		} else if(st.indexOf("開房") != -1){
 			//makeChannel(msg);
 		} else if(st.indexOf("廠商的疏失") != -1){
@@ -219,6 +219,22 @@ client.on('message', async (msg) => {
 			});
 		} else if(st.indexOf("天罰") != -1){
 			msg.channel.send("嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！");
+		} else if(st.indexOf("呼叫保護協會") != -1){
+			msg.channel.send("左線預備～阿苗(-wO)▄︻┻┳═一\n右線預備～冬喵(-wO)▄︻┻┳═一\n全線預備～白弓(-wO)▄︻┻┳═一\n等候命令");
+			fire = true;
+		} else if(st.indexOf("開火") != -1 && fire){
+			msg.channel.send("阿苗(-wO)▄︻┻┳═一 - - - -\n冬喵(-wO)▄︻┻┳═一 - - - -\n白弓(-wO)▄︻┻┳═一 - - - -");
+			fire = false;
+		} else if(st.indexOf("ㄏㄚˋ") != -1){
+			msg.channel.send("你好兇，你是不是兇我இдஇ");
+		} else if(st.indexOf("不給糖就搗蛋") != -1){
+			//Math.floor(Math.random() * (max - min + 1) + min)
+			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
+			if(rndInt >= 5) {
+				msg.channel.send(":heart:搗～蛋～:heart:");
+			} else { 
+				msg.channel.send(":candy:糖果～糖果～:candy:");
+			}
 		}
 		
 		/*else if(st.indexOf("蘭蘭我婆") != -1){
@@ -347,6 +363,12 @@ client.on('message', async (msg) => {
 			
 			case '讓我進去':
 				msg.channel.send('https://tenor.com/5LZw.gif');
+			break;
+
+			case '蘭尾掰掰':
+				case '蘭尾88':
+					case '蘭尾再見':
+				msg.reply('我們晚點見:heart:');
 			break;
 
 			case '卡姆喵開台':
