@@ -211,6 +211,14 @@ client.on('message', async (msg) => {
 			*/
 		} else if(st.indexOf("開房") != -1){
 			//makeChannel(msg);
+		} else if(st.indexOf("廠商的疏失") != -1){
+			msg.channel.send({
+				files: [
+					"./source/廠商的疏失.png"
+				]
+			});
+		} else if(st.indexOf("天罰") != -1){
+			msg.channel.send("嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！");
 		}
 		
 		/*else if(st.indexOf("蘭蘭我婆") != -1){
@@ -337,6 +345,10 @@ client.on('message', async (msg) => {
 				});
 			break;
 			
+			case '讓我進去':
+				msg.channel.send('https://tenor.com/5LZw.gif');
+			break;
+
 			case '卡姆喵開台':
 				//msg.channel.send('<@295578379107827722> :robot::robot::robot::robot::robot::robot::robot::robot:');
 			break;
