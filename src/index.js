@@ -174,6 +174,7 @@ client.on('message', async (msg) => {
 		} else if(st.indexOf("好吃魔法") != -1){
 			msg.reply('萌欸萌欸～啾～:heart:');
 		} else if(st.indexOf("嗨") != -1){
+			/*
 			myDate = new Date();
 			newTime = myDate.getMinutes();
 			if(newTime - oldTime >= 1){
@@ -184,6 +185,7 @@ client.on('message', async (msg) => {
 					});
 				oldTime = newTime;
 			}
+			*/
 		} else if(st.indexOf("開房") != -1){
 			//makeChannel(msg);
 		}
