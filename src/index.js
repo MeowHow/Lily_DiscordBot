@@ -5,9 +5,8 @@ git add .
 git commit -m ''
 git push
 */
-
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES']});
 /*
 const config = require('config.json');
 client.login(config.MyTOKEN);
@@ -339,7 +338,8 @@ client.on('message', async (msg) => {
 	}
 	
 });
-
+/*
+//建立頻道
 function makeChannel(message){
 	NewArray = message.content.split('-');
 	let name = "botCreate_" + NewArray[1];
@@ -354,16 +354,18 @@ function makeChannel(message){
 		channel.setUserLimit(NewArray[2]) //限制人數上限
 	})
 }
-
+*/
+/*
 //獲得頻道ID
-// console.log("Servers:")
-//    client.guilds.forEach((guild) => {
-//        console.log(" - " + guild.name)
-//
-        // List all channels
-//        guild.channels.forEach((channel) => {
-//            console.log(` -- ${channel.name} (${channel.type}) - ${channel.id}`)
-//        })
-//    })
-//const localPNG = new Discord.Attachment('C:\Users\sssww\Desktop\bot\fku.png')
-//generalChannel.send(localPNG)
+console.log("Servers:")
+    client.guilds.forEach((guild) => {
+        console.log(" - " + guild.name)
+
+        List all channels
+        guild.channels.forEach((channel) => {
+           console.log(` -- ${channel.name} (${channel.type}) - ${channel.id}`)
+       })
+   })
+const localPNG = new Discord.Attachment('C:\Users\sssww\Desktop\bot\fku.png')
+generalChannel.send(localPNG)
+*/

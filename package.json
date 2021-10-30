@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "dependencies": {
-    "discord.js": "^11.6.4",
+    "discord.js": "^13.3.0",
     "dotenv": "^10.0.0"
   },
   "scripts": {
@@ -12,7 +12,6 @@
   },
   "author": "MeowHow",
   "license": "ISC",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeowHow/Lily_DiscordBot.git"
@@ -20,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/MeowHow/Lily_DiscordBot/issues"
   },
-  "homepage": "https://github.com/MeowHow/Lily_DiscordBot#readme"
+  "homepage": "https://github.com/MeowHow/Lily_DiscordBot#readme",
+  "devDependencies": {}
 }
