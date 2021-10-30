@@ -6,7 +6,29 @@ git commit -m ''
 git push
 */
 const Discord = require('discord.js');
-const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES']});
+const intents = new Discord.Intents(32767);
+const client = new Discord.Client({ intents });
+/*
+const ALL_INTENTS = 
+    (1 << 0) +  // GUILDS
+    (1 << 1) +  // GUILD_MEMBERS
+    (1 << 2) +  // GUILD_BANS
+    (1 << 3) +  // GUILD_EMOJIS_AND_STICKERS
+    (1 << 4) +  // GUILD_INTEGRATIONS
+    (1 << 5) +  // GUILD_WEBHOOKS
+    (1 << 6) +  // GUILD_INVITES
+    (1 << 7) +  // GUILD_VOICE_STATES
+    (1 << 8) +  // GUILD_PRESENCES
+    (1 << 9) +  // GUILD_MESSAGES
+    (1 << 10) + // GUILD_MESSAGE_REACTIONS
+    (1 << 11) + // GUILD_MESSAGE_TYPING
+    (1 << 12) + // DIRECT_MESSAGES
+    (1 << 13) + // DIRECT_MESSAGE_REACTIONS
+    (1 << 14);  // DIRECT_MESSAGE_TYPING
+
+// Outputs 32767
+console.log(ALL_INTENTS);
+*/
 /*
 const config = require('config.json');
 client.login(config.MyTOKEN);
@@ -33,6 +55,8 @@ client.on('message', async (msg) => {
 	try {
 		var mm = msg.content;
 		let st = mm.replace(/ /g, ""); 
+		//let megaT = mm.replace(/[-+/\'. %]/g, ""); 
+		//console.log(megaT);
 		if (st.indexOf("一劑") != -1 )
 		{
 			msg.channel.send({
