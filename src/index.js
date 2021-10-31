@@ -140,31 +140,31 @@ client.on('message', async (msg) => {
 					"./source/詐寢.png"
 				]
 			});
-		} else if(st.indexOf("詐寢") != -1){
+		} /*else if(st.indexOf("詐寢") != -1){
 			msg.channel.send({
 				files: [
 					"./source/詐寢剪掉.jpg"
 				]
 			});
-		} else if(st.indexOf("女友") != -1){
+		}*/ else if(st.indexOf("女友") != -1){
 			msg.channel.send({
 				files: [
 					"./source/女友.png"
 				]
 			});
-		} else if(st.indexOf("剪掉") != -1){
+		}/* else if(st.indexOf("剪掉") != -1){
 			msg.channel.send({
 				files: [
 					"./source/懶趴.png"
 				]
 			});
-		} else if(st.indexOf("欸糯米") != -1){
+		}*/ /*else if(st.indexOf("欸糯米") != -1){
 			msg.channel.send({
 				files: [
 					"./source/泡酒.png"
 				]
 			});
-		} else if(st.indexOf("辛酸畫面") != -1){
+		}*/ else if(st.indexOf("辛酸畫面") != -1){
 			msg.channel.send({
 				files: [
 					"./source/辛酸畫面.png"
@@ -176,29 +176,29 @@ client.on('message', async (msg) => {
 					"./source/鈴玲兒.png"
 				]
 			});
-		} else if(st.indexOf("莫姊不要") != -1){
-			/*
+		} /*else if(st.indexOf("莫姊不要") != -1){
+			
 			msg.channel.send({
 				files: [
 					"./source/不要.png"
 				]
 			});
-			*/
-		} else if(st.indexOf("看醫生") != -1){
+			
+		}*/ else if(st.indexOf("看醫生") != -1){
 			msg.channel.send({
 				files: [
 					"./source/Doctor.mov"
 				]
 			});
-		} else if(st.indexOf("進來") != -1){
+		} /*else if(st.indexOf("進來") != -1){
 			msg.channel.send({
 				files: [
 					"./source/進來.png"
 				]
 			});
-		} else if(st.indexOf("好吃魔法") != -1){
+		}*/ else if(st.indexOf("好吃魔法") != -1){
 			msg.reply('萌欸萌欸～啾～:heart:');
-		} else if(st.indexOf("嗨糯米") != -1 || st.indexOf("嗨茶几") != -1){
+		} /*else if(st.indexOf("嗨糯米") != -1 || st.indexOf("嗨茶几") != -1){
 			myDate = new Date();
 			newTime = myDate.getMinutes();
 			if(newTime - oldTime >= 1){
@@ -209,7 +209,7 @@ client.on('message', async (msg) => {
 					});
 				oldTime = newTime;
 			}
-		} else if(st.indexOf("開房") != -1){
+		}*/ else if(st.indexOf("開房") != -1){
 			//makeChannel(msg);
 		} else if(st.indexOf("廠商的疏失") != -1){
 			msg.channel.send({
@@ -234,6 +234,10 @@ client.on('message', async (msg) => {
 				msg.channel.send(":heart:搗～蛋～:heart:");
 			} else { 
 				msg.channel.send(":candy:糖果～糖果～:candy:");
+			}
+		} else if(st.indexOf("NTR欠砍") != -1) {
+			if(msg.author.id == '279250173979525121') {
+				msg.channel.send('https://tenor.com/baz4u.gif');
 			}
 		}
 		
@@ -290,17 +294,17 @@ client.on('message', async (msg) => {
 					]
 				});
 			break;
-		
+			/*
 			case '?':
-				/*
+				
 				msg.channel.send({
 					files: [
 						"./source/物理超渡.jpg"
 					]
 				});
-				*/
+				
 			break;
-		
+			*/
 			case '醒':
 				msg.channel.send('我還沒有圖片，但我建議你清醒。');
 			break;
@@ -330,7 +334,8 @@ client.on('message', async (msg) => {
 			break;
 			
 			case 'ชานมนุ่มๆอร้อยอร่อยจนให้อา':
-				msg.channel.send('媽，我要一杯',{
+				msg.channel.send('媽，我要一杯');
+				msg.channel.send({
 					files: [
 						"./source/媽.jpg"
 					]
