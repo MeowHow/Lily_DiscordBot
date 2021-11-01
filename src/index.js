@@ -1,10 +1,16 @@
 console.clear();
 /*
-git remote -v
-git add .
-git commit -m ''
-git push
-git clean -fx
+git remote -v //push位置
+git add . --加入序列
+git commit -m '' --確認
+git push --上傳
+git clean -fx --刪除忽略上傳的檔案
+git branch --查看分支 
+git branch 分支名  --建立分支
+got checkout 分支名 --切換分支
+git merge 檔案 --合併分支檔案
+git branch 分支名 –d --刪除分支
+git branch 分支名 –D --強制刪除分支
 */
 const Discord = require('discord.js');
 const intents = new Discord.Intents(32767);
@@ -134,7 +140,8 @@ client.on('message', async (msg) => {
 					//"./source/心動的感覺-2.png"
 				]
 			});
-		} else if(st.indexOf("不詐寢") != -1 || st.indexOf("不會詐寢") != -1){
+		} else if(st.indexOf("詐寢") != -1){
+			//st.indexOf("不詐寢") != -1 || st.indexOf("不會詐寢"
 			msg.channel.send({
 				files: [
 					"./source/詐寢.png"
@@ -229,13 +236,15 @@ client.on('message', async (msg) => {
 			msg.channel.send("你好兇，你是不是兇我இдஇ");
 		} else if(st.indexOf("不給糖就搗蛋") != -1){
 			//Math.floor(Math.random() * (max - min + 1) + min)
-			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
-			if(rndInt >= 5) {
+			let rndInt = Math.floor(Math.random() * (12 - 1 + 1) + 1)
+			if(rndInt <= 5) {
 				msg.channel.send(":heart:搗～蛋～:heart:");
-			} else { 
+			} else if (rndInt > 5 && rndInt <= 10) { 
 				msg.channel.send(":candy:糖果～糖果～:candy:");
+			} else {
+				msg.channel.send("https://tenor.com/SxzM.gif");
 			}
-		} else if(st.indexOf("NTR欠砍") != -1) {
+		} else if(st.indexOf("NTR欠砍") != -1 || st.indexOf("讓我砍砍") != -1) {
 			if(msg.author.id == '279250173979525121') {
 				msg.channel.send('https://tenor.com/baz4u.gif');
 			}
@@ -247,7 +256,7 @@ client.on('message', async (msg) => {
 			} else { 
 				msg.channel.send("https://tenor.com/bzqi5.gif");
 			}
-		}
+		} 
 		
 		/*else if(st.indexOf("蘭蘭我婆") != -1){
 			if(msg.author.id == '279250173979525121') {
@@ -382,6 +391,29 @@ client.on('message', async (msg) => {
 				case '蘭尾88':
 					case '蘭尾再見':
 				msg.reply('我們晚點見:heart:');
+			break;
+
+			case '生火':
+				let rndInt = Math.floor(Math.random() * (100 - 1 + 1) + 1)
+				if(rndInt <= 30) {
+					msg.channel.send("施放失敗，你的柴火咧？");
+				} else if (rndInt > 30 && rndInt <= 50) { 
+					msg.channel.send("https://tenor.com/KXUt.gif");
+				} else if (rndInt > 50 && rndInt <= 80) { 
+					msg.channel.send("https://tenor.com/bmDdl.gif");
+				} else if (rndInt > 80 && rndInt <= 95){
+					msg.channel.send("https://tenor.com/tcfy.gif");
+				} else {
+					msg.channel.send("https://tenor.com/4qZh.gif");
+				}
+			break;
+
+			case '茶几不乖':
+				msg.channel.send({
+					files: [
+						"./source/茶几不乖.png"
+					]
+				});
 			break;
 
 			case '卡姆喵開台':
