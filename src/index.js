@@ -251,7 +251,7 @@ client.on('message', async (msg) => {
 		} else if(st.indexOf("恭喜") != -1){
 			//Math.floor(Math.random() * (max - min + 1) + min)
 			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
-			if(rndInt >= 5) {
+			if(rndInt <= 5) {
 				msg.channel.send("https://tenor.com/brJVM.gif");
 			} else { 
 				msg.channel.send("https://tenor.com/bzqi5.gif");
