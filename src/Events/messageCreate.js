@@ -231,18 +231,6 @@ module.exports = new Event("messageCreate", (client, message) => {
 		}*/
 
 		switch (args) {
-			case '恭迎犬哥':
-				myDate = new Date();
-				newTime = myDate.getMinutes();
-				if(newTime - oldTime >= 1){
-					message.channel.send({
-						files: [
-								"./Source/恭迎犬哥.png"
-							]
-						});
-					oldTime = newTime;
-				}
-				break;
 
 			case '蘭尾掰掰':
 					case '蘭尾88':
