@@ -5,6 +5,7 @@ git add . --加入序列
 git commit -m '' --確認
 git push --上傳
 git clean -fx --本機刪除忽略上傳的檔案
+git rm --cached 檔名 --刪除檔案庫中忽略的檔案
 git branch --查看分支 
 git branch 分支名  --建立分支
 git checkout 分支名 --切換分支
@@ -422,13 +423,13 @@ client.on('message', async (msg) => {
 				});
 			break;
 
-			case '測試i':
+			case '我是窩體工程師嗎':
 				let role = msg.guild.roles.cache.has(cfig.EngineerID);
-				console.log(role);
-			break;
-
-			case '卡姆喵開台':
-				//msg.channel.send('<@295578379107827722> :robot::robot::robot::robot::robot::robot::robot::robot:');
+				if (role) {
+					msg.reply('你是');
+				} else {
+					msg.reply('你不是');
+				}
 			break;
 				
 			case '測試ing':
