@@ -1,6 +1,11 @@
 /** @format */
 
 const Event = require("../Structures/Event.js");
+var myDate;
+myDate = new Date();
+var newTime = myDate.getMinutes();
+var oldTime = 0;
+var fire = false;
 
 module.exports = new Event("messageCreate", (client, message) => {
 	if (message.author.bot) return;
@@ -223,17 +228,39 @@ module.exports = new Event("messageCreate", (client, message) => {
 				});
 			}
 		}*/
+
+		switch (args) {
+			case '恭迎犬哥':
+				myDate = new Date();
+				newTime = myDate.getMinutes();
+				if(newTime - oldTime >= 1){
+					message.channel.send({
+						files: [
+								"./Source/恭迎犬哥.png"
+							]
+						});
+					oldTime = newTime;
+				}
+				break;
+
+			case '蘭尾掰掰':
+					case '蘭尾88':
+						case '蘭尾再見':
+					message.reply('我們晚點見:heart:');
+				break;
+				
+			default:
+				break;
+		}
+
+		const command = client.commands.find(cmd => cmd.name == args);
+
+		if (!command) return;
+
+		command.run(message, args, client);
 	}
 	catch (e) {
 		message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
 		console.log(e);
 	}
-	const command = client.commands.find(cmd => cmd.name == args);
-
-	if (!command) return;
-
-	command.run(message, args, client);
-
-	
-
 });
