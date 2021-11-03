@@ -4,7 +4,7 @@ git remote -v //push位置
 git add . --加入序列
 git commit -m '' --確認
 git push --上傳
-git clean -fx --刪除忽略上傳的檔案
+git clean -fx --本機刪除忽略上傳的檔案
 git branch --查看分支 
 git branch 分支名  --建立分支
 got checkout 分支名 --切換分支
@@ -36,13 +36,14 @@ const ALL_INTENTS =
 // Outputs 32767
 console.log(ALL_INTENTS);
 */
+const cfig = require('./config.json');
 /*
-const config = require('config.json');
 client.login(config.MyTOKEN);
 */
 require("dotenv").config();
-client.login(process.env.MyTOKEN);
 
+client.login(process.env.MyTOKEN);
+//vat TT = process.env.MyTOKEN;
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
@@ -225,7 +226,7 @@ client.on('message', async (msg) => {
 				]
 			});
 		} else if(st.indexOf("天罰") != -1){
-			msg.channel.send("嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！");
+			msg.channel.send("嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！https://tenor.com/bFJ2r.gif");
 		} else if(st.indexOf("呼叫保護協會") != -1){
 			msg.channel.send("左線預備～阿苗(-wO)▄︻┻┳═一\n右線預備～冬喵(-wO)▄︻┻┳═一\n全線預備～白弓(-wO)▄︻┻┳═一\n等候命令");
 			fire = true;
@@ -245,7 +246,7 @@ client.on('message', async (msg) => {
 				msg.channel.send("https://tenor.com/SxzM.gif");
 			}
 		} else if(st.indexOf("NTR欠砍") != -1 || st.indexOf("讓我砍砍") != -1) {
-			if(msg.author.id == '279250173979525121') {
+			if(msg.author.id == cfig.MeowHowID) {
 				msg.channel.send('https://tenor.com/baz4u.gif');
 			}
 		} else if(st.indexOf("恭喜") != -1){
@@ -259,7 +260,7 @@ client.on('message', async (msg) => {
 		} 
 		
 		/*else if(st.indexOf("蘭蘭我婆") != -1){
-			if(msg.author.id == '279250173979525121') {
+			if(msg.author.id == cfig.MeowHowID) {
 				msg.channel.send('穩妥LA');
 			} else {
 				msg.channel.send({
@@ -297,11 +298,16 @@ client.on('message', async (msg) => {
 			break;
 		
 			case '恭迎犬哥':
-				msg.channel.send({
-					files: [
-						"./source/恭迎犬哥.png"
-					]
-				});
+				myDate = new Date();
+				newTime = myDate.getMinutes();
+				if(newTime - oldTime >= 1){
+					msg.channel.send({
+						files: [
+								"./source/恭迎犬哥.png"
+							]
+						});
+					oldTime = newTime;
+				}
 			break;
 			
 			case '上車':
@@ -414,6 +420,11 @@ client.on('message', async (msg) => {
 						"./source/茶几不乖.png"
 					]
 				});
+			break;
+
+			case '測試i':
+				let role = msg.guild.roles.cache.has(cfig.EngineerID);
+				console.log(role);
 			break;
 
 			case '卡姆喵開台':
