@@ -7,7 +7,7 @@ git push --上傳
 git clean -fx --本機刪除忽略上傳的檔案
 git branch --查看分支 
 git branch 分支名  --建立分支
-got checkout 分支名 --切換分支
+git checkout 分支名 --切換分支
 git merge 檔案 --合併分支檔案
 git branch 分支名 –d --刪除分支
 git branch 分支名 –D --強制刪除分支
