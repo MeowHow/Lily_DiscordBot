@@ -99,15 +99,27 @@ client.on('message', async (msg) => {
 				]
 			});
 		} else if(st.indexOf("恭迎錯字邪神") != -1){
+			/*
 			myDate = new Date();
-			newTime = myDate.getMinutes();
-			if(newTime - oldTime >= 1){
+				newTime = myDate.getMinutes();
+				if(newTime - oldTime >= 1){
+					msg.channel.send({
+						files: [
+								"./source/恭迎邪神.jpg"
+							]
+						});
+					oldTime = newTime;
+				}
+			*/
+			let role02 = msg.member.roles.cache.has(cfig.CthulhuID);
+			if(role02) {
 				msg.channel.send({
 					files: [
-							"./source/恭迎邪神.jpg"
-						]
-					});
-				oldTime = newTime;
+						"./source/恭迎邪神.jpg"
+					]
+				});
+			} else {
+				msg.reply('無信者，吾主不會眷顧於你。')
 			}
 		} else if(st.indexOf("你閉閉") != -1){
 			msg.channel.send('我找不到適合的，上面的都先閉閉。');
@@ -424,12 +436,26 @@ client.on('message', async (msg) => {
 			break;
 
 			case '我是窩體工程師嗎':
-				let role = msg.guild.roles.cache.has(cfig.EngineerID);
+				let role01 = msg.member.roles.cache.has(cfig.EngineerID);
 				//console.log(role);
-				if (role) {
+				if (role01) {
 					msg.reply('你是');
 				} else {
 					msg.reply('你不是');
+				}
+			break;
+
+			case '我是邪神信徒嗎':
+				let role02 = msg.member.roles.cache.has(cfig.CthulhuID);
+				//console.log(role);
+				if (role02) {
+					msg.reply({
+						files: [
+							"./source/cthulhu.png"
+						]
+					});
+				} else {
+					msg.reply('你不可見證吾主尊容');
 				}
 			break;
 				
