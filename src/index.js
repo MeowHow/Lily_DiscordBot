@@ -11,7 +11,6 @@ git checkout 分支名 --切換分支
 git merge 檔案 --合併分支檔案
 git branch 分支名 –d --刪除分支
 git branch 分支名 –D --強制刪除分支
-
 */
 const Discord = require('discord.js');
 const intents = new Discord.Intents(32767);
