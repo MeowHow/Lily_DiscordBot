@@ -425,6 +425,7 @@ client.on('message', async (msg) => {
 
 			case '我是窩體工程師嗎':
 				let role = msg.guild.roles.cache.has(cfig.EngineerID);
+				//console.log(role);
 				if (role) {
 					msg.reply('你是');
 				} else {
