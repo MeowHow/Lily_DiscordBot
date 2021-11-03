@@ -1,4 +1,3 @@
-console.clear();
 /*
 git remote -v //push位置
 git add . --加入序列
@@ -12,11 +11,7 @@ git checkout 分支名 --切換分支
 git merge 檔案 --合併分支檔案
 git branch 分支名 –d --刪除分支
 git branch 分支名 –D --強制刪除分支
-*/
-const Discord = require('discord.js');
-const intents = new Discord.Intents(32767);
-const client = new Discord.Client({ intents });
-/*
+
 const ALL_INTENTS = 
     (1 << 0) +  // GUILDS
     (1 << 1) +  // GUILD_MEMBERS
@@ -37,268 +32,48 @@ const ALL_INTENTS =
 // Outputs 32767
 console.log(ALL_INTENTS);
 */
-const cfig = require('./config.json');
-/*
-client.login(config.MyTOKEN);
-*/
+//const Discord = require("discord.js");
+
+/** @format */
+
+console.clear();
+
+const Client = require("./Structures/Client.js");
+
+const config = require("./Data/config.json");
 require("dotenv").config();
 
+const client = new Client();
+
 client.login(process.env.MyTOKEN);
-//vat TT = process.env.MyTOKEN;
+client.start();
+
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
 var oldTime = 0;
 var fire = false;
 
-client.on('ready', () => {	
-	try {
-		console.log("Bot is ready");
-	} catch(err) {
-		console.log(err);
-	}
-});
-
-
-client.on('message', async (msg) => {
-
-	if (msg.author.bot) return;
-	const args = msg.content.replace(/ /g, ""); 
-	//console.log(msg.content); //用這方式看表符
+client.on('messageCreate', async (message) => {
+	//console.log(message.content); //用這方式看表符ID
 	
 	try {
-		var mm = msg.content;
-		let st = mm.replace(/ /g, ""); 
+		var mm = message.content;
+		const args = message.content.replace(/ /g, ""); 
 		//let megaT = mm.replace(/[-+/\'. %]/g, ""); 
 		//console.log(megaT);
-		if (st.indexOf("一劑") != -1 )
-		{
-			msg.channel.send({
-				files: [
-					"./Source/你需要一劑抹德納.png"
-				]
-			});
-		} else if(st.indexOf("真的不對勁") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/效率蘭警-特效.jpg"
-				]
-			});
-		} else if(st.indexOf("不對勁") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/效率蘭警.jpg"
-				]
-			});
-		} else if(st.indexOf("窮") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/窮.png"
-				]
-			});
-		} else if(st.indexOf("什麼蒙蔽了我的雙眼") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/雙眼.png"
-				]
-			});
-		} else if(st.indexOf("恭迎錯字邪神") != -1){
-			/*
-			myDate = new Date();
-				newTime = myDate.getMinutes();
-				if(newTime - oldTime >= 1){
-					msg.channel.send({
-						files: [
-								"./Source/恭迎邪神.jpg"
-							]
-						});
-					oldTime = newTime;
-				}
-			*/
-			let role02 = msg.member.roles.cache.has(cfig.CthulhuID);
-			if(role02) {
-				msg.channel.send({
-					files: [
-						"./Source/恭迎邪神.jpg"
-					]
-				});
-			} else {
-				msg.reply('無信者，吾主不會眷顧於你。')
-			}
-		} else if(st.indexOf("你閉閉") != -1){
-			msg.channel.send('我找不到適合的，上面的都先閉閉。');
-		} else if(st.indexOf("有雷") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/想不到吧.png"
-				]
-			});
-		} else if(st.indexOf("到家") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/到家.png"
-				]
-			});
-		} else if(st.indexOf("停止運作") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/exe_.gif"
-				]
-			});
-		} else if(st.indexOf("信仰") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/克蘇魯天父.jpg"
-				]
-			});
-		} else if(st.indexOf("心動的感覺") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/心動的感覺-1.png"
-					//"./Source/心動的感覺-2.png"
-				]
-			});
-		} else if(st.indexOf("詐寢") != -1){
-			//st.indexOf("不詐寢") != -1 || st.indexOf("不會詐寢"
-			msg.channel.send({
-				files: [
-					"./Source/詐寢.png"
-				]
-			});
-		} /*else if(st.indexOf("詐寢") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/詐寢剪掉.jpg"
-				]
-			});
-		}*/ else if(st.indexOf("女友") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/女友.png"
-				]
-			});
-		}/* else if(st.indexOf("剪掉") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/懶趴.png"
-				]
-			});
-		}*/ /*else if(st.indexOf("欸糯米") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/泡酒.png"
-				]
-			});
-		}*/ else if(st.indexOf("辛酸畫面") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/辛酸畫面.png"
-				]
-			});
-		} else if(st.indexOf("鈴玲兒") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/鈴玲兒.png"
-				]
-			});
-		} /*else if(st.indexOf("莫姊不要") != -1){
-			
-			msg.channel.send({
-				files: [
-					"./Source/不要.png"
-				]
-			});
-			
-		}*/ else if(st.indexOf("看醫生") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/Doctor.mov"
-				]
-			});
-		} /*else if(st.indexOf("進來") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/進來.png"
-				]
-			});
-		}*/ else if(st.indexOf("好吃魔法") != -1){
-			msg.reply('萌欸萌欸～啾～:heart:');
-		} /*else if(st.indexOf("嗨糯米") != -1 || st.indexOf("嗨茶几") != -1){
-			myDate = new Date();
-			newTime = myDate.getMinutes();
-			if(newTime - oldTime >= 1){
-				msg.channel.send({
-					files: [
-							"./Source/嗨.png"
-						]
-					});
-				oldTime = newTime;
-			}
-		}*/ else if(st.indexOf("開房") != -1){
-			//makeChannel(msg);
-		} else if(st.indexOf("廠商的疏失") != -1){
-			msg.channel.send({
-				files: [
-					"./Source/廠商的疏失.png"
-				]
-			});
-		} else if(st.indexOf("天罰") != -1){
-			msg.channel.send("嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！https://tenor.com/bFJ2r.gif");
-		} else if(st.indexOf("呼叫保護協會") != -1){
-			msg.channel.send("左線預備～阿苗(-wO)▄︻┻┳═一\n右線預備～冬喵(-wO)▄︻┻┳═一\n全線預備～白弓(-wO)▄︻┻┳═一\n等候命令");
-			fire = true;
-		} else if(st.indexOf("開火") != -1 && fire){
-			msg.channel.send("阿苗(-wO)▄︻┻┳═一 - - - -\n冬喵(-wO)▄︻┻┳═一 - - - -\n白弓(-wO)▄︻┻┳═一 - - - -");
-			fire = false;
-		} else if(st.indexOf("ㄏㄚˋ") != -1){
-			msg.channel.send("你好兇，你是不是兇我இдஇ");
-		} else if(st.indexOf("不給糖就搗蛋") != -1){
-			//Math.floor(Math.random() * (max - min + 1) + min)
-			let rndInt = Math.floor(Math.random() * (12 - 1 + 1) + 1)
-			if(rndInt <= 5) {
-				msg.channel.send(":heart:搗～蛋～:heart:");
-			} else if (rndInt > 5 && rndInt <= 10) { 
-				msg.channel.send(":candy:糖果～糖果～:candy:");
-			} else {
-				msg.channel.send("https://tenor.com/SxzM.gif");
-			}
-		} else if(st.indexOf("NTR欠砍") != -1 || st.indexOf("讓我砍砍") != -1) {
-			if(msg.author.id == cfig.MeowHowID) {
-				msg.channel.send('https://tenor.com/baz4u.gif');
-			}
-		} else if(st.indexOf("恭喜") != -1){
-			//Math.floor(Math.random() * (max - min + 1) + min)
-			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
-			if(rndInt <= 5) {
-				msg.channel.send("https://tenor.com/brJVM.gif");
-			} else { 
-				msg.channel.send("https://tenor.com/bzqi5.gif");
-			}
-		} 
 		
-		/*else if(st.indexOf("蘭蘭我婆") != -1){
-			if(msg.author.id == cfig.MeowHowID) {
-				msg.channel.send('穩妥LA');
-			} else {
-				msg.channel.send({
-					files: [
-						"./Source/作夢.jpg"
-					]
-				});
-			}
-		}*/
-		
-		switch(st)
+		switch(args)
 		{
 			case '為阿苗獻上禮炮':
 			/*
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/禮炮.png"
 					]
 				});
 			*/
-			msg.channel.send('又想壞壞？抱歉這裡只剩下一隻炸蝦。',{
+			message.channel.send('又想壞壞？抱歉這裡只剩下一隻炸蝦。',{
 				files: [
 					"./Source/炸蝦.jpg"
 				]
@@ -307,7 +82,7 @@ client.on('message', async (msg) => {
 			break;
 		
 			case '早安':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/早安.jpg"
 					]
@@ -318,7 +93,7 @@ client.on('message', async (msg) => {
 				myDate = new Date();
 				newTime = myDate.getMinutes();
 				if(newTime - oldTime >= 1){
-					msg.channel.send({
+					message.channel.send({
 						files: [
 								"./Source/恭迎犬哥.png"
 							]
@@ -328,7 +103,7 @@ client.on('message', async (msg) => {
 			break;
 			
 			case '上車':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/上車囉.gif"
 					]
@@ -337,7 +112,7 @@ client.on('message', async (msg) => {
 			/*
 			case '?':
 				
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/物理超渡.jpg"
 					]
@@ -346,15 +121,15 @@ client.on('message', async (msg) => {
 			break;
 			*/
 			case '醒':
-				msg.channel.send('我還沒有圖片，但我建議你清醒。');
+				message.channel.send('我還沒有圖片，但我建議你清醒。');
 			break;
 			
 			case '晚安':
-				msg.channel.send('https://tenor.com/bKCsG.gif');
+				message.channel.send('https://tenor.com/bKCsG.gif');
 			break;
 			
 			case '睡覺':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/睡覺.jpg"
 					]
@@ -362,7 +137,7 @@ client.on('message', async (msg) => {
 			break;
 			
 			case '邪神日常':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/日常.png"
 					]
@@ -370,12 +145,12 @@ client.on('message', async (msg) => {
 			break;
 			
 			case '我們來聽聽蘭尾的意見。':
-				msg.channel.send('雖然人類的性癖是自由的，但是我還是建議你去看一下醫生。');
+				message.channel.send('雖然人類的性癖是自由的，但是我還是建議你去看一下醫生。');
 			break;
 			
 			case 'ชานมนุ่มๆอร้อยอร่อยจนให้อา':
-				msg.channel.send('媽，我要一杯');
-				msg.channel.send({
+				message.channel.send('媽，我要一杯');
+				message.channel.send({
 					files: [
 						"./Source/媽.jpg"
 					]
@@ -383,7 +158,7 @@ client.on('message', async (msg) => {
 			break;
 			
 			case '渣姆喵':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/渣姆喵.png"
 					]
@@ -391,7 +166,7 @@ client.on('message', async (msg) => {
 			break;
 
 			case '我有病':
-				msg.reply({
+				message.reply({
 					files: [
 						"./Source/Doctor.mov"
 					]
@@ -399,7 +174,7 @@ client.on('message', async (msg) => {
 			break;
 
 			case '貓豪有病':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/貓豪有病.png"
 					]
@@ -407,32 +182,32 @@ client.on('message', async (msg) => {
 			break;
 			
 			case '讓我進去':
-				msg.channel.send('https://tenor.com/5LZw.gif');
+				message.channel.send('https://tenor.com/5LZw.gif');
 			break;
 
 			case '蘭尾掰掰':
 				case '蘭尾88':
 					case '蘭尾再見':
-				msg.reply('我們晚點見:heart:');
+				message.reply('我們晚點見:heart:');
 			break;
 
 			case '生火':
 				let rndInt = Math.floor(Math.random() * (100 - 1 + 1) + 1)
 				if(rndInt <= 30) {
-					msg.channel.send("施放失敗，你的柴火咧？");
+					message.channel.send("施放失敗，你的柴火咧？");
 				} else if (rndInt > 30 && rndInt <= 50) { 
-					msg.channel.send("https://tenor.com/KXUt.gif");
+					message.channel.send("https://tenor.com/KXUt.gif");
 				} else if (rndInt > 50 && rndInt <= 80) { 
-					msg.channel.send("https://tenor.com/bmDdl.gif");
+					message.channel.send("https://tenor.com/bmDdl.gif");
 				} else if (rndInt > 80 && rndInt <= 95){
-					msg.channel.send("https://tenor.com/tcfy.gif");
+					message.channel.send("https://tenor.com/tcfy.gif");
 				} else {
-					msg.channel.send("https://tenor.com/4qZh.gif");
+					message.channel.send("https://tenor.com/4qZh.gif");
 				}
 			break;
 
 			case '茶几不乖':
-				msg.channel.send({
+				message.channel.send({
 					files: [
 						"./Source/茶几不乖.png"
 					]
@@ -440,41 +215,41 @@ client.on('message', async (msg) => {
 			break;
 
 			case '我是窩體工程師嗎':
-				let role01 = msg.member.roles.cache.has(cfig.EngineerID);
+				let role01 = message.member.roles.cache.has(config.EngineerID);
 				//console.log(role);
 				if (role01) {
-					msg.reply('你是');
+					message.reply('你是');
 				} else {
-					msg.reply('你不是');
+					message.reply('你不是');
 				}
 			break;
 
 			case '我是邪神信徒嗎':
-				let role02 = msg.member.roles.cache.has(cfig.CthulhuID);
+				let role02 = message.member.roles.cache.has(config.CthulhuID);
 				//console.log(role);
 				if (role02) {
-					msg.reply({
+					message.reply({
 						files: [
 							"./Source/cthulhu.png"
 						]
 					});
 				} else {
-					msg.reply('你不可見證吾主尊容');
+					message.reply('你不可見證吾主尊容');
 				}
 			break;
 
 			case '轉吧':
 				let rndBc = Math.floor(Math.random() * (10 - 1 + 1) + 1)
 				if(rndBc <= 9) {
-					msg.channel.send("轉吧！黑貓洗衣機");
-					msg.channel.send({
+					message.channel.send("轉吧！黑貓洗衣機");
+					message.channel.send({
 						files: [
 							"./Source/轉吧01.gif"
 						]
 					});
 				} else {
-					msg.channel.send("轉...！");
-					msg.channel.send({
+					message.channel.send("轉...！");
+					message.channel.send({
 						files: [
 							"./Source/轉吧02.gif"
 						]
@@ -484,21 +259,21 @@ client.on('message', async (msg) => {
 				
 			case '測試ing':
 				//console.log(client.emojis.array()); //表符清單
-				//msg.channel.send('<:3x:902518306056065075>');
+				//message.channel.send('<:3x:902518306056065075>');
 			break;
 
 			case '測試ID':
-				console.log(msg.author.id);
+				console.log(message.author.id);
 			break;
 
 			case '測試':
 				//guild.channels.array().filter(c => c.name === 'General')
-				//console.log(msg.guild.channels.array().filter(c => c.name === 'botCreate_私密小聚會'));
+				//console.log(message.guild.channels.array().filter(c => c.name === 'botCreate_私密小聚會'));
 			break;
 		}
 	}
 	catch (e) {
-		msg.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
+		message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
 		console.log(e);
 	}
 	
