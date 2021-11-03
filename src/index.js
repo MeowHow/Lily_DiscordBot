@@ -61,7 +61,11 @@ client.on('ready', () => {
 
 
 client.on('message', async (msg) => {
+
+	if (msg.author.bot) return;
+	const args = msg.content.replace(/ /g, ""); 
 	//console.log(msg.content); //用這方式看表符
+	
 	try {
 		var mm = msg.content;
 		let st = mm.replace(/ /g, ""); 
@@ -71,31 +75,31 @@ client.on('message', async (msg) => {
 		{
 			msg.channel.send({
 				files: [
-					"./source/你需要一劑抹德納.png"
+					"./Source/你需要一劑抹德納.png"
 				]
 			});
 		} else if(st.indexOf("真的不對勁") != -1){
 			msg.channel.send({
 				files: [
-					"./source/效率蘭警-特效.jpg"
+					"./Source/效率蘭警-特效.jpg"
 				]
 			});
 		} else if(st.indexOf("不對勁") != -1){
 			msg.channel.send({
 				files: [
-					"./source/效率蘭警.jpg"
+					"./Source/效率蘭警.jpg"
 				]
 			});
 		} else if(st.indexOf("窮") != -1){
 			msg.channel.send({
 				files: [
-					"./source/窮.png"
+					"./Source/窮.png"
 				]
 			});
 		} else if(st.indexOf("什麼蒙蔽了我的雙眼") != -1){
 			msg.channel.send({
 				files: [
-					"./source/雙眼.png"
+					"./Source/雙眼.png"
 				]
 			});
 		} else if(st.indexOf("恭迎錯字邪神") != -1){
@@ -105,7 +109,7 @@ client.on('message', async (msg) => {
 				if(newTime - oldTime >= 1){
 					msg.channel.send({
 						files: [
-								"./source/恭迎邪神.jpg"
+								"./Source/恭迎邪神.jpg"
 							]
 						});
 					oldTime = newTime;
@@ -115,7 +119,7 @@ client.on('message', async (msg) => {
 			if(role02) {
 				msg.channel.send({
 					files: [
-						"./source/恭迎邪神.jpg"
+						"./Source/恭迎邪神.jpg"
 					]
 				});
 			} else {
@@ -126,95 +130,95 @@ client.on('message', async (msg) => {
 		} else if(st.indexOf("有雷") != -1){
 			msg.channel.send({
 				files: [
-					"./source/想不到吧.png"
+					"./Source/想不到吧.png"
 				]
 			});
 		} else if(st.indexOf("到家") != -1){
 			msg.channel.send({
 				files: [
-					"./source/到家.png"
+					"./Source/到家.png"
 				]
 			});
 		} else if(st.indexOf("停止運作") != -1){
 			msg.channel.send({
 				files: [
-					"./source/exe_.gif"
+					"./Source/exe_.gif"
 				]
 			});
 		} else if(st.indexOf("信仰") != -1){
 			msg.channel.send({
 				files: [
-					"./source/克蘇魯天父.jpg"
+					"./Source/克蘇魯天父.jpg"
 				]
 			});
 		} else if(st.indexOf("心動的感覺") != -1){
 			msg.channel.send({
 				files: [
-					"./source/心動的感覺-1.png"
-					//"./source/心動的感覺-2.png"
+					"./Source/心動的感覺-1.png"
+					//"./Source/心動的感覺-2.png"
 				]
 			});
 		} else if(st.indexOf("詐寢") != -1){
 			//st.indexOf("不詐寢") != -1 || st.indexOf("不會詐寢"
 			msg.channel.send({
 				files: [
-					"./source/詐寢.png"
+					"./Source/詐寢.png"
 				]
 			});
 		} /*else if(st.indexOf("詐寢") != -1){
 			msg.channel.send({
 				files: [
-					"./source/詐寢剪掉.jpg"
+					"./Source/詐寢剪掉.jpg"
 				]
 			});
 		}*/ else if(st.indexOf("女友") != -1){
 			msg.channel.send({
 				files: [
-					"./source/女友.png"
+					"./Source/女友.png"
 				]
 			});
 		}/* else if(st.indexOf("剪掉") != -1){
 			msg.channel.send({
 				files: [
-					"./source/懶趴.png"
+					"./Source/懶趴.png"
 				]
 			});
 		}*/ /*else if(st.indexOf("欸糯米") != -1){
 			msg.channel.send({
 				files: [
-					"./source/泡酒.png"
+					"./Source/泡酒.png"
 				]
 			});
 		}*/ else if(st.indexOf("辛酸畫面") != -1){
 			msg.channel.send({
 				files: [
-					"./source/辛酸畫面.png"
+					"./Source/辛酸畫面.png"
 				]
 			});
 		} else if(st.indexOf("鈴玲兒") != -1){
 			msg.channel.send({
 				files: [
-					"./source/鈴玲兒.png"
+					"./Source/鈴玲兒.png"
 				]
 			});
 		} /*else if(st.indexOf("莫姊不要") != -1){
 			
 			msg.channel.send({
 				files: [
-					"./source/不要.png"
+					"./Source/不要.png"
 				]
 			});
 			
 		}*/ else if(st.indexOf("看醫生") != -1){
 			msg.channel.send({
 				files: [
-					"./source/Doctor.mov"
+					"./Source/Doctor.mov"
 				]
 			});
 		} /*else if(st.indexOf("進來") != -1){
 			msg.channel.send({
 				files: [
-					"./source/進來.png"
+					"./Source/進來.png"
 				]
 			});
 		}*/ else if(st.indexOf("好吃魔法") != -1){
@@ -225,7 +229,7 @@ client.on('message', async (msg) => {
 			if(newTime - oldTime >= 1){
 				msg.channel.send({
 					files: [
-							"./source/嗨.png"
+							"./Source/嗨.png"
 						]
 					});
 				oldTime = newTime;
@@ -235,7 +239,7 @@ client.on('message', async (msg) => {
 		} else if(st.indexOf("廠商的疏失") != -1){
 			msg.channel.send({
 				files: [
-					"./source/廠商的疏失.png"
+					"./Source/廠商的疏失.png"
 				]
 			});
 		} else if(st.indexOf("天罰") != -1){
@@ -278,7 +282,7 @@ client.on('message', async (msg) => {
 			} else {
 				msg.channel.send({
 					files: [
-						"./source/作夢.jpg"
+						"./Source/作夢.jpg"
 					]
 				});
 			}
@@ -290,13 +294,13 @@ client.on('message', async (msg) => {
 			/*
 				msg.channel.send({
 					files: [
-						"./source/禮炮.png"
+						"./Source/禮炮.png"
 					]
 				});
 			*/
 			msg.channel.send('又想壞壞？抱歉這裡只剩下一隻炸蝦。',{
 				files: [
-					"./source/炸蝦.jpg"
+					"./Source/炸蝦.jpg"
 				]
 			});
 		
@@ -305,7 +309,7 @@ client.on('message', async (msg) => {
 			case '早安':
 				msg.channel.send({
 					files: [
-						"./source/早安.jpg"
+						"./Source/早安.jpg"
 					]
 				});
 			break;
@@ -316,7 +320,7 @@ client.on('message', async (msg) => {
 				if(newTime - oldTime >= 1){
 					msg.channel.send({
 						files: [
-								"./source/恭迎犬哥.png"
+								"./Source/恭迎犬哥.png"
 							]
 						});
 					oldTime = newTime;
@@ -326,7 +330,7 @@ client.on('message', async (msg) => {
 			case '上車':
 				msg.channel.send({
 					files: [
-						"./source/上車囉.gif"
+						"./Source/上車囉.gif"
 					]
 				});
 			break;
@@ -335,7 +339,7 @@ client.on('message', async (msg) => {
 				
 				msg.channel.send({
 					files: [
-						"./source/物理超渡.jpg"
+						"./Source/物理超渡.jpg"
 					]
 				});
 				
@@ -352,7 +356,7 @@ client.on('message', async (msg) => {
 			case '睡覺':
 				msg.channel.send({
 					files: [
-						"./source/睡覺.jpg"
+						"./Source/睡覺.jpg"
 					]
 				});
 			break;
@@ -360,7 +364,7 @@ client.on('message', async (msg) => {
 			case '邪神日常':
 				msg.channel.send({
 					files: [
-						"./source/日常.png"
+						"./Source/日常.png"
 					]
 				});
 			break;
@@ -373,7 +377,7 @@ client.on('message', async (msg) => {
 				msg.channel.send('媽，我要一杯');
 				msg.channel.send({
 					files: [
-						"./source/媽.jpg"
+						"./Source/媽.jpg"
 					]
 				});
 			break;
@@ -381,7 +385,7 @@ client.on('message', async (msg) => {
 			case '渣姆喵':
 				msg.channel.send({
 					files: [
-						"./source/渣姆喵.png"
+						"./Source/渣姆喵.png"
 					]
 				});
 			break;
@@ -389,7 +393,7 @@ client.on('message', async (msg) => {
 			case '我有病':
 				msg.reply({
 					files: [
-						"./source/Doctor.mov"
+						"./Source/Doctor.mov"
 					]
 				});
 			break;
@@ -397,7 +401,7 @@ client.on('message', async (msg) => {
 			case '貓豪有病':
 				msg.channel.send({
 					files: [
-						"./source/貓豪有病.png"
+						"./Source/貓豪有病.png"
 					]
 				});
 			break;
@@ -430,7 +434,7 @@ client.on('message', async (msg) => {
 			case '茶几不乖':
 				msg.channel.send({
 					files: [
-						"./source/茶几不乖.png"
+						"./Source/茶几不乖.png"
 					]
 				});
 			break;
@@ -451,11 +455,30 @@ client.on('message', async (msg) => {
 				if (role02) {
 					msg.reply({
 						files: [
-							"./source/cthulhu.png"
+							"./Source/cthulhu.png"
 						]
 					});
 				} else {
 					msg.reply('你不可見證吾主尊容');
+				}
+			break;
+
+			case '轉吧':
+				let rndBc = Math.floor(Math.random() * (10 - 1 + 1) + 1)
+				if(rndBc <= 9) {
+					msg.channel.send("轉吧！黑貓洗衣機");
+					msg.channel.send({
+						files: [
+							"./Source/轉吧01.gif"
+						]
+					});
+				} else {
+					msg.channel.send("轉...！");
+					msg.channel.send({
+						files: [
+							"./Source/轉吧02.gif"
+						]
+					});
 				}
 			break;
 				
