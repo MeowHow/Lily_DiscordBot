@@ -1,5 +1,6 @@
 /** @format */
 
+const config = require("../Data/config.json");
 const Event = require("../Structures/Event.js");
 var myDate;
 myDate = new Date();
