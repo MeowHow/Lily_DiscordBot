@@ -7,6 +7,7 @@ myDate = new Date();
 var newTime = myDate.getMinutes();
 var oldTime = 0;
 var fire = false;
+var glory = false;
 
 module.exports = new Event("messageCreate", (client, message) => {
 	if (message.author.bot) return;
@@ -216,8 +217,27 @@ module.exports = new Event("messageCreate", (client, message) => {
 			} else { 
 				message.channel.send("https://tenor.com/bzqi5.gif");
 			}
-		} 
-		
+		} else if(args.indexOf("通靈") != -1){
+			message.channel.send({
+				files: [
+					"./Source/通靈.png"
+				]
+			});
+		} else if(args.indexOf("舉起你的榮耀") != -1){
+			message.channel.send({
+				files: [
+					"./Source/舉起你的榮耀.png"
+				]
+			});			
+			glory = true;
+		} else if(args.indexOf("另一個") != -1 && glory){
+			message.channel.send({
+				files: [
+					"./Source/看看這隻狼.png"
+				]
+			});
+			glory = false;
+		}
 		/*else if(args.indexOf("蘭蘭我婆") != -1){
 			if(message.author.id == config.MeowHowID) {
 				message.channel.send('穩妥LA');
