@@ -14,8 +14,17 @@ module.exports = new Event("messageCreate", (client, message) => {
 
 	const args = message.content.replace(/ /g, ""); 
 	try {
-		if (args.indexOf("一劑") != -1 )
-		{
+		/*if (message.content.startsWith(config.prefix)) {
+			const temp = message.content.substring(config.prefix.length);
+			let order = new Array();
+			order = temp.split(' ');
+			const command = client.commands.find(cmd => cmd.name == order[0]);
+			console.log(order);
+			order.push(message.author.id);
+			if (!command) return;
+
+			command.run(message, order, client);
+		} else */if (args.indexOf("一劑") != -1) {
 			message.channel.send({
 				files: [
 					"./Source/你需要一劑抹德納.png"
@@ -224,6 +233,7 @@ module.exports = new Event("messageCreate", (client, message) => {
 				]
 			});
 		} else if(args.indexOf("舉起你的榮耀") != -1){
+			message.channel.send("這個？");
 			message.channel.send({
 				files: [
 					"./Source/舉起你的榮耀.png"
@@ -231,6 +241,7 @@ module.exports = new Event("messageCreate", (client, message) => {
 			});			
 			glory = true;
 		} else if(args.indexOf("另一個") != -1 && glory){
+			message.channel.send("噢，這個～");
 			message.channel.send({
 				files: [
 					"./Source/看看這隻狼.png"

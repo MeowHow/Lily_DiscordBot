@@ -1,2 +1,6 @@
 src/.env
 src/config.json
+src/PHP/sql.php
+src/PHP/RPG.php
+src/PHP/event_AddProcess.php
+src/PHP/dbConnection.php
