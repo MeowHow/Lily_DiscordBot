@@ -248,6 +248,13 @@ module.exports = new Event("messageCreate", (client, message) => {
 				]
 			});
 			glory = false;
+		} else if(args.indexOf("好冷") != -1 || args.indexOf("變冷") != -1 || args.indexOf("天涼") != -1){
+			message.channel.send({
+				files: [
+					"./Source/好冷.png"
+				]
+			});
+			glory = false;
 		}
 		/*else if(args.indexOf("蘭蘭我婆") != -1){
 			if(message.author.id == config.MeowHowID) {
