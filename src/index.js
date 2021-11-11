@@ -8,9 +8,10 @@ git rm --cached 檔名 --刪除檔案庫中忽略的檔案
 git branch --查看分支 
 git branch 分支名  --建立分支
 git checkout 分支名 --切換分支
-git merge 檔案 --合併分支檔案
+git merge 檔案 --合併分支中的特定檔案
 git branch 分支名 –d --刪除分支
 git branch 分支名 –D --強制刪除分支
+git pull origin 分支名 --遠端指定分支拉取到本地
 
 const ALL_INTENTS = 
     (1 << 0) +  // GUILDS
