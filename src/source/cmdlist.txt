@@ -1,0 +1,20 @@
+["1",
+"BMW",
+"Audi",
+"Fiat"]
+
+const fs = require("fs");
+var myArr;
+/*fs.readFile("./Source/testfile.txt", function (error, data) {
+		if (error) {
+			console.log('讀取檔案失敗')
+			return
+		}
+		myArr = JSON.parse(data);
+
+		console.log(AAAA);
+		console.log(myArr[AAAA]);
+		
+	  })*/
+	  let AAAA = myArr.indexOf(args);
+command.run(message, myArr[AAAA], client);
