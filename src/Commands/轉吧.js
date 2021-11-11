@@ -8,6 +8,7 @@ module.exports = new Command({
 	async run(message, args, client) {
 		try {
 			//反應區
+			//Math.floor(Math.random() * (max - min + 1) + min)
 			let rndBc = Math.floor(Math.random() * (10 - 1 + 1) + 1)
 				if(rndBc <= 9) {
 					message.channel.send("轉吧！黑貓洗衣機");

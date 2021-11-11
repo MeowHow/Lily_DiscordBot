@@ -8,6 +8,7 @@ module.exports = new Command({
 	async run(message, args, client) {
 		try {
 			//反應區
+			//Math.floor(Math.random() * (max - min + 1) + min)
 			let rndInt = Math.floor(Math.random() * (4 - 1 + 1) + 1)
 			if (rndInt <= 2) {
 				message.channel.send({

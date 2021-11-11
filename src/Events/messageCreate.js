@@ -255,7 +255,21 @@ module.exports = new Event("messageCreate", (client, message) => {
 				]
 			});
 			glory = false;
-		}
+		} else if(args.indexOf("有人不乖") != -1 ){
+			message.channel.send({
+				files: [
+					"./Source/有人不乖.png"
+				]
+			});
+			glory = false;
+		} else if(args.indexOf("==") != -1 || args.indexOf("= =") != -1){
+			message.channel.send({
+				files: [
+					"./Source/真的.png"
+				]
+			});
+			glory = false;
+		} 
 		/*else if(args.indexOf("蘭蘭我婆") != -1){
 			if(message.author.id == config.MeowHowID) {
 				message.channel.send('穩妥LA');
