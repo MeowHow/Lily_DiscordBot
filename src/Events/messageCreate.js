@@ -3,6 +3,7 @@
 const config = require("../Data/config.json");
 const Event = require("../Structures/Event.js");
 const cmdlist = require("../Data/cmdlist.json");
+const fs = require('fs');
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
@@ -27,12 +28,36 @@ module.exports = new Event("messageCreate", (client, message) => {
 			command.run(message, order, client);
 		}*/
 
+		if(message.content.indexOf("ID確認") != -1 && message.content.startsWith(config.prefix)) {
+			let order = new Array();
+			order = message.content.split(' ');
+			if(order.length == 3) {
+				fs.readFile("./Data/BlueArchive.json", function (err, data) {
+					if (err) {
+						console.log("檔案讀取錯誤");
+						return console.error(err);
+					}
+					Info = JSON.parse(data);
+					Info[order[1]] = order[2];
+					redata = JSON.stringify(Info);
+
+					fs.writeFile("./Data/BlueArchive.json", redata, function (err) {
+						if (err) {
+							console.error(err);
+						}
+						console.log("蔚藍檔案ID新增");
+						message.reply('紀錄成功，輸入「蔚藍檔案」來查看ID');
+					})
+				})
+			}
+		}
+
+		
 		if(args.indexOf("NTR欠砍") != -1 || args.indexOf("讓我砍砍") != -1) {
 			if(message.author.id == config.MeowHowID) {
 				message.channel.send('https://tenor.com/baz4u.gif');
 			}
-		} 
-		if(args.indexOf("好冷") != -1 || args.indexOf("變冷") != -1 || args.indexOf("天涼") != -1){
+		} else if(args.indexOf("好冷") != -1 || args.indexOf("變冷") != -1 || args.indexOf("天涼") != -1){
 			message.channel.send({
 				files: [
 					"./Source/好冷.png"
