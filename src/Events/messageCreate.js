@@ -207,6 +207,10 @@ module.exports = new Event("messageCreate", (client, message) => {
 		} else if(args.indexOf("不給糖就搗蛋") != -1){
 			//Math.floor(Math.random() * (max - min + 1) + min)
 			let rndInt = Math.floor(Math.random() * (12 - 1 + 1) + 1)
+			if(config.LockID.indexOf(message.author.id)!=-1)
+			{
+				rndInt = 12;
+			}
 			if(rndInt <= 5) {
 				message.channel.send(":heart:搗～蛋～:heart:");
 			} else if (rndInt > 5 && rndInt <= 10) { 
