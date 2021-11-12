@@ -3,8 +3,8 @@
 const Command = require("../Structures/Command.js");
 
 module.exports = new Command({
-	name: "笑死",
-	description: "笑死地雷",
+	name: "錯覺",
+	description: "錯覺地雷",
 	async run(message, args, client) {
 		try {
 			//反應區
