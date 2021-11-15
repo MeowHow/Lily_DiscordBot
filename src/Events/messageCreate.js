@@ -63,7 +63,7 @@ module.exports = new Event("messageCreate", (client, message) => {
 					"./Source/好冷.png"
 				]
 			});
-		} else if(args.indexOf("==") != -1 || args.indexOf("= =") != -1){
+		} else if(args.indexOf("==") != -1){
 			message.channel.send({
 				files: [
 					"./Source/真的.png"
