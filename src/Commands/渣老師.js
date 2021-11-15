@@ -4,7 +4,7 @@ const Command = require("../Structures/Command.js");
 
 module.exports = new Command({
 	name: "渣老師",
-	description: "渣老師地雷",
+	description: "此地雷有加入至cmdlist使其成為包含詞",
 	async run(message, args, client) {
 		try {
 			//反應區
