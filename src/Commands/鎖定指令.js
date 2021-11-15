@@ -10,15 +10,16 @@ module.exports = new Command({
         try {
 
             let getID = message.author.id;
+            let nickname = message.author.nickname;
             //反應區
             if (config.LockID.indexOf(getID) == -1) {
-                message.channel.send('鎖定目標!');
+                message.channel.send(nickname+'鎖定目標!');
                 config.LockID.push(getID);
             } else {
                 message.channel.send("鎖定模式已經啟用")
             }
             if (message.author.id==config.XgID) {
-                message.channel.send("茶几還想鎖定啊?，好啦給你鎖")
+                message.channel.send(nickname+"還想鎖定啊?，好啦給你鎖")
             }
 
         } catch (error) {

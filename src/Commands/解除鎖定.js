@@ -10,8 +10,9 @@ module.exports = new Command({
         try {
             //反應區
             let getID = message.author.id;
+            let nickname = message.author.nickname;
             if (config.LockID.indexOf(getID) != -1) {
-                message.channel.send('解除鎖定!');
+                message.channel.send(nickname+'解除鎖定!');
                 config.LockID.pop(getID);
             }
 
