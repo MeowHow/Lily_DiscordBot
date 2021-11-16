@@ -8,10 +8,9 @@ module.exports = new Command({
     description: "特定身分，使用鎖定強制讓特定地雷出現",
     async run(message, args, client) {
         try {
-
-            let getID = message.author.id;
-            let nickname = message.author.nickname;
             //反應區
+            let getID = message.author.id;
+            let nickname = message.author.username;
             if (config.LockID.indexOf(getID) == -1) {
                 message.channel.send(nickname+'鎖定目標!');
                 config.LockID.push(getID);
