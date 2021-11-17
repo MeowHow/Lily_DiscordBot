@@ -28,7 +28,6 @@ class Client extends Discord.Client {
 		         * @type {Command}
 		         */
 		        const command = require(`../Commands/${file}`);
-		        //console.log(`Command ${command.name} loaded`);
 		        this.commands.set(command.name, command);
 	        });
         fs.readdirSync("./Events")

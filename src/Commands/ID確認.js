@@ -9,14 +9,16 @@ module.exports = new Command({
 	async run(message, args, client) {
 		try {
 			//反應區
-			if(args.length == 3) {
+			let order = new Array();
+			order = args.split(' ');
+			if(order.length == 3) {
 				fs.readFile("./Data/BlueArchive.json", function (err, data) {
 					if (err) {
 						console.log("檔案讀取錯誤");
 						return console.error(err);
 					}
 					let Info = JSON.parse(data);
-					Info[args[1]] = args[2];
+					Info[order[1]] = order[2];
 					redata = JSON.stringify(Info);
 
 					fs.writeFile("./Data/BlueArchive.json", redata, function (err) {

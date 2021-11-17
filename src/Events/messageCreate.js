@@ -3,6 +3,7 @@
 const config = require("../Data/config.json");
 const Event = require("../Structures/Event.js");
 const cmdlist = require("../Data/cmdlist.json");
+const Plist = require("../Data/Plist.json");
 
 var myDate;
 myDate = new Date();
@@ -19,13 +20,21 @@ module.exports = new Event("messageCreate", (client, message) => {
 			const temp = message.content.substring(config.prefix.length);
 			let order = new Array();
 			order = temp.split(' ');
-
 			command = client.commands.find(cmd => cmd.name == order[0]);
-			command.run(message, order, client);
+			if (!command) {
+				return;
+			}
+			command.run(message, temp, client);
 			return;
 		}
 		else {
 			const args = message.content.replace(/ /g, "");
+			
+			for (let i = 0; i < Plist.length; i++) {
+				if (args == Plist[i]) {
+					return;
+				}
+			}
 			if(args.indexOf("NTR欠砍") != -1 || args.indexOf("讓我砍砍") != -1) {
 				if(message.author.id == config.MeowHowID) {
 					message.channel.send('https://tenor.com/baz4u.gif');
@@ -59,7 +68,7 @@ module.exports = new Event("messageCreate", (client, message) => {
 
 			if (!command) {
 				for (let i = 0; i < cmdlist.length; i++) {
-					if (args.indexOf(cmdlist[i]) > -1) {
+					if (args.indexOf(cmdlist[i]) != -1) {
 						command = client.commands.find(cmd => cmd.name == cmdlist[i]);
 						command.run(message, cmdlist[i].toString(), client);
 						return;
