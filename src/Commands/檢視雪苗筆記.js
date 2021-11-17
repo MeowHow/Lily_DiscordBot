@@ -18,7 +18,7 @@ module.exports = new Command({
 				}
 				let Info = JSON.parse(data);
 				Object.keys(Info).forEach(function(key){
-					temp += (key+1) + '.' + Info[key] + "\n";
+					temp += key + '.' + Info[key] + "\n";
 			   });
 			   const exampleEmbed = new Discord.MessageEmbed()
 				.setColor('#0099ff')
