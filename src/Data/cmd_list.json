@@ -17,6 +17,7 @@
 	"勞贖": {"type": "fileL", "msg": "./Source/勞贖.png"},
 	"天罰": {"type": "msgL", "msg": "嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！https://tenor.com/bFJ2r.gif"},
 	"你閉閉": {"type": "msgL", "msg": "我找不到適合的，上面的都先閉閉。"},
+	"ㄏㄚˋ": {"type": "msgL", "msg": "你好兇，你是不是兇我இдஇ"},
 	"好吃魔法": {"type": "replyL", "msg": "萌欸萌欸～啾～:heart:"},
 	"為阿苗獻上禮炮": {"type": "doubleL", "msgA": "又想壞壞？抱歉這裡只剩下一隻炸蝦。", "msgB": "./Source/炸蝦.jpg"}
 }

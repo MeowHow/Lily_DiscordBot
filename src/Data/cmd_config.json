@@ -20,6 +20,5 @@
     "晚安": {"type": "msg", "msg": "https://tenor.com/bKCsG.gif"},
     "醒": {"type": "msg", "msg": "我還沒有圖片，但我建議你清醒。"},
     "讓我進去": {"type": "msg", "msg": "https://tenor.com/5LZw.gif"},
-    "ㄏㄚˋ": {"type": "msg", "msg": "你好兇，你是不是兇我இдஇ"},
     "我有病": {"type": "reply", "msg": "./Source/Doctor.mov"}
 }
