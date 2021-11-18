@@ -4,7 +4,8 @@ const config = require("../Data/config.json");
 const Event = require("../Structures/Event.js");
 const cmdlist = require("../Data/cmdlist.json");
 const Plist = require("../Data/Plist.json");
-
+const cmd_config = require("../Data/cmd_config.json");
+const cmd_list = require("../Data/cmd_list.json");
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
@@ -13,9 +14,9 @@ var fire = false;
 var glory = false;
 
 module.exports = new Event("messageCreate", (client, message) => {
+	
 	try {
 		if (message.author.bot) return;
-		
 		if (message.content.startsWith(config.prefix)) {
 			const temp = message.content.substring(config.prefix.length);
 			let order = new Array();
@@ -63,17 +64,34 @@ module.exports = new Event("messageCreate", (client, message) => {
 				default:
 					break;
 			}
-	  	
-			let command = client.commands.find(cmd => cmd.name == args);
-
-			if (!command) {
-				for (let i = 0; i < cmdlist.length; i++) {
-					if (args.indexOf(cmdlist[i]) != -1) {
-						command = client.commands.find(cmd => cmd.name == cmdlist[i]);
-						command.run(message, cmdlist[i].toString(), client);
-						return;
+			
+			let command;
+			if(cmd_config[args]) {
+				//單詞雷
+				command = client.commands.find(cmd => cmd.name == cmd_config[args].type);
+				command.run(message, args, client);
+			}
+			else {
+				//包含雷
+				for (let T in Object.keys(cmd_list)) {
+					if(args.indexOf(Object.keys(cmd_list)[T]) != -1){
+						command = client.commands.find(cmd => cmd.name == cmd_list[Object.keys(cmd_list)[T]].type);
+						
+						command.run(message, Object.keys(cmd_list)[T], client);
 					}
 				}
+			}
+
+
+			for (let i = 0; i < cmdlist.length; i++) {
+				if (args.indexOf(cmdlist[i]) > -1) {
+					command = client.commands.find(cmd => cmd.name == cmdlist[i]);
+					command.run(message, cmdlist[i].toString(), client);
+					return;
+				}
+			}
+			command = client.commands.find(cmd => cmd.name == args);
+			if (!command) {
 				return;
 			}
 			command.run(message, args, client);

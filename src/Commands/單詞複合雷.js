@@ -1,16 +1,18 @@
 /** @format */
 
 const Command = require("../Structures/Command.js");
+const cmd_config = require("../Data/cmd_config.json");
 
 module.exports = new Command({
-	name: "一劑",
-	description: "此地雷有加入至cmdlist使其成為包含詞",
+	name: "double",
+	description: "通用指令雷",
 	async run(message, args, client) {
 		try {
 			//反應區
+			message.channel.send(cmd_config[args].msgA);
 			message.channel.send({
 				files: [
-					"./Source/你需要一劑抹德納.png"
+					cmd_config[args].msgB
 				]
 			});
 		} catch (error) {

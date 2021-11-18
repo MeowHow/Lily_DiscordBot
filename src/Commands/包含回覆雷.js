@@ -1,18 +1,15 @@
 /** @format */
 
 const Command = require("../Structures/Command.js");
+const cmd_list = require("../Data/cmd_list.json");
 
 module.exports = new Command({
-	name: "恭迎犬哥",
-	description: "恭迎犬哥地雷",
+	name: "replyL",
+	description: "通用指令雷",
 	async run(message, args, client) {
 		try {
 			//反應區
-			message.channel.send({
-				files: [
-					"./Source/恭迎犬哥.png"
-				]
-			});
+			message.reply(cmd_list[args].msg);
 		} catch (error) {
 			message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
 			console.log(error);
