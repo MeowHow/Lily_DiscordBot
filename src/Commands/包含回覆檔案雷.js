@@ -1,17 +1,17 @@
 /** @format */
 
 const Command = require("../Structures/Command.js");
-const cmd_config = require("../Data/cmd_config.json");
+const cmd_list = require("../Data/cmd_list.json");
 
 module.exports = new Command({
-	name: "reply",
+	name: "replyFL",
 	description: "通用指令雷",
 	async run(message, args, client) {
 		try {
 			//反應區
 			message.reply({
 				files: [
-					cmd_config[args].msg
+					cmd_list[args].msg
 				]
 			});
 		} catch (error) {

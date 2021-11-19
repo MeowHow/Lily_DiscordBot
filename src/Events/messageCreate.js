@@ -40,29 +40,12 @@ module.exports = new Event("messageCreate", (client, message) => {
 				if(message.author.id == config.MeowHowID) {
 					message.channel.send('https://tenor.com/baz4u.gif');
 				}
-			} else if(args.indexOf("好冷") != -1 || args.indexOf("變冷") != -1 || args.indexOf("天涼") != -1){
-				message.channel.send({
-					files: [
-						"./Source/好冷.png"
-					]
-				});
 			} else if(args.indexOf("==") != -1){
 				message.channel.send({
 					files: [
 						"./Source/真的.png"
 					]
 				});
-			} 
-
-			switch (args) {
-				case '蘭尾掰掰':
-						case '蘭尾88':
-							case '蘭尾再見':
-						message.reply('我們晚點見:heart:');
-					break;
-
-				default:
-					break;
 			}
 			
 			let command;

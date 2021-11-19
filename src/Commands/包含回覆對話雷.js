@@ -4,7 +4,7 @@ const Command = require("../Structures/Command.js");
 const cmd_list = require("../Data/cmd_list.json");
 
 module.exports = new Command({
-	name: "replyL",
+	name: "replyML",
 	description: "通用指令雷",
 	async run(message, args, client) {
 		try {

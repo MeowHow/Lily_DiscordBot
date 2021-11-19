@@ -11,14 +11,13 @@
     "渣姆喵": {"type": "file", "msg": "./Source/渣姆喵.png"},
     "睡覺": {"type": "file", "msg": "./Source/睡覺.jpg"},
     "貓豪有病": {"type": "file", "msg": "./Source/貓豪有病.png"},
-    "渣老師": {"type": "file", "msg": "./Source/渣老師.png"},
-    "詐寢": {"type": "file", "msg": "./Source/詐寢.png"},
-    "鈴玲兒": {"type": "file", "msg": "./Source/鈴玲兒.png"},
     "廠商的疏失": {"type": "file", "msg": "./Source/廠商的疏失.png"},
-    "窮": {"type": "file", "msg": "./Source/窮.png"},
+    "卡姆喵好佬喔": {"type": "file", "msg": "./Source/好佬喔.png"},
+    "雪苗好婆": {"type": "file", "msg": "./Source/好婆.png"},
     "我們來聽聽蘭尾的意見。": {"type": "msg", "msg": "雖然人類的性癖是自由的，但是我還是建議你去看一下醫生。"},
     "晚安": {"type": "msg", "msg": "https://tenor.com/bKCsG.gif"},
     "醒": {"type": "msg", "msg": "我還沒有圖片，但我建議你清醒。"},
     "讓我進去": {"type": "msg", "msg": "https://tenor.com/5LZw.gif"},
-    "我有病": {"type": "reply", "msg": "./Source/Doctor.mov"}
+    "我有病": {"type": "replyF", "msg": "./Source/Doctor.mov"},
+    "蘭尾再見": {"type": "replyM", "msg": "我們晚點見:heart:"}
 }
