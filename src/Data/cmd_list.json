@@ -22,6 +22,7 @@
 	"好冷": {"type": "fileL", "msg": "./Source/好冷.png"},
 	"變冷": {"type": "fileL", "msg": "./Source/好冷.png"},
 	"天涼": {"type": "fileL", "msg": "./Source/好冷.png"},
+	"騙人": {"type": "fileL", "msg": "./Source/騙人.png"},
 	"天罰": {"type": "msgL", "msg": "嗯？誰？夜燈喵快用你的十萬伏特想想辦法啊！https://tenor.com/bFJ2r.gif"},
 	"你閉閉": {"type": "msgL", "msg": "我找不到適合的，上面的都先閉閉。"},
 	"ㄏㄚˋ": {"type": "msgL", "msg": "你好兇，你是不是兇我இдஇ"},
