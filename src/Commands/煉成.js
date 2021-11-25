@@ -20,13 +20,21 @@ module.exports = new Command({
 			'<:grobot:902572394567331911>',
 			'<:qqqq:913320542868746240>',
 			'<:www:912883772876283995>',
-			'<:ssssss:913324280425619497>'];
+			'<:ssssss:913324280425619497>',
+			':seedling:'];
 			//Math.floor(Math.random() * (max - min + 1) + min)
 			let rndInt = Math.floor(Math.random() * (head.length - 0 + 1) + 0)
 			let body = '<:428579938925543426:902521312491216906>';
-			//let body = ['<:428579938925543426:902521312491216906>','<:__:902697838058827807>'];
 			let foot = '<:__:906914064507211777>';
-			message.channel.send(head[rndInt] + '\n' + body + '\n' + foot);
+			if (rndInt == head.length) {
+				message.channel.send({
+					files: [
+						'./Source/大葛葛.png'
+					]
+				});
+			} else {
+				message.channel.send(head[rndInt] + '\n' + body + '\n' + foot);
+			}
 		} catch (error) {
 			message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
 			console.log(error);
