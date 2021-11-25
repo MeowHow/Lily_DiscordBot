@@ -18,6 +18,8 @@ module.exports = new Event("messageCreate", (client, message) => {
 	try {
 		if (message.author.bot) return;
 		//console.log(message.content);
+		//Math.floor(Math.random() * (max - min + 1) + min)
+		//console.log(Math.floor(Math.random() * (1 - 0 + 1) + 0))
 		if (message.content.startsWith(config.prefix)) {
 			const temp = message.content.substring(config.prefix.length);
 			let order = new Array();
