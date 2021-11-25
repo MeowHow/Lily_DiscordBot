@@ -17,6 +17,7 @@ module.exports = new Event("messageCreate", (client, message) => {
 	
 	try {
 		if (message.author.bot) return;
+		//console.log(message.content);
 		if (message.content.startsWith(config.prefix)) {
 			const temp = message.content.substring(config.prefix.length);
 			let order = new Array();
