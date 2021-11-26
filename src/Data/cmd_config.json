@@ -17,10 +17,11 @@
     "茶几不該": {"type": "file", "msg": "./Source/茶几不該.png"},
     "卡姆帥嗎": {"type": "file", "msg": "./Source/帥.png"},
     "鈴玲兒還好嗎": {"type": "file", "msg": "./Source/鈴玲兒還好嗎.png"},
+    "我佛火力支援": {"type": "file", "msg": "./Source/超渡法會.jpg"},
     "我們來聽聽蘭尾的意見。": {"type": "msg", "msg": "雖然人類的性癖是自由的，但是我還是建議你去看一下醫生。"},
     "晚安": {"type": "msg", "msg": "https://tenor.com/bKCsG.gif"},
     "醒": {"type": "msg", "msg": "我還沒有圖片，但我建議你清醒。"},
-    "讓我進去": {"type": "msg", "msg": "https://tenor.com/5LZw.gif"},
+    "病號": {"type": "msg", "msg": "./Source/病號.PNG"},
     "我有病": {"type": "replyF", "msg": "./Source/Doctor.mov"},
     "蘭尾再見": {"type": "replyM", "msg": "我們晚點見:heart:"}
 }

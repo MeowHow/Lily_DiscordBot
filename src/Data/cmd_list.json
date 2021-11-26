@@ -28,7 +28,11 @@
 	"你閉閉": {"type": "msgL", "msg": "我找不到適合的，上面的都先閉閉。"},
 	"ㄏㄚˋ": {"type": "msgL", "msg": "你好兇，你是不是兇我இдஇ"},
 	"感恩貓豪": {"type": "msgL", "msg": "恭迎貓豪觀音⎝༼ ◕д ◕ ༽⎠渡世靈顯四方⎝༼ ◕д ◕ ༽⎠"},
+	"讓我進去": {"type": "msgL", "msg": "https://tenor.com/5LZw.gif"},
 	"什麼時候埋": {"type": "replyFL", "msg": "./Source/你猜.png"},
 	"好吃魔法": {"type": "replyML", "msg": "萌欸萌欸～啾～:heart:"},
-	"為阿苗獻上禮炮": {"type": "doubleL", "msgA": "又想壞壞？抱歉這裡只剩下一隻炸蝦。", "msgB": "./Source/炸蝦.jpg"}
+	"為阿苗獻上禮炮": {"type": "doubleL", "msgA": "又想壞壞？抱歉這裡只剩下一隻炸蝦。", "msgB": "./Source/炸蝦.jpg"},
+	"病號在嗎": {"type": "doubleL", "msgA": "在這", "msgB": "./Source/病號.PNG"},
+	"病號睡了沒": {"type": "doubleL", "msgA": "還沒", "msgB": "./Source/病號.PNG"},
+	"頭痛嗎": {"type": "doubleL", "msgA": "你猜對了", "msgB": "./Source/病號.PNG"}
 }
