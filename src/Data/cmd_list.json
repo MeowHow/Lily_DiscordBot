@@ -1,6 +1,5 @@
 {
 	"一劑": {"type": "fileL", "msg": "./Source/你需要一劑抹德納.png"},
-	"女友": {"type": "fileL", "msg": "./Source/女友.png"},
 	"真的不對勁": {"type": "fileL", "msg": "./Source/效率蘭警-特效.jpg"},
 	"不對勁": {"type": "fileL", "msg": "./Source/效率蘭警.jpg"},
 	"什麼蒙蔽了我的雙眼": {"type": "fileL", "msg": "./Source/雙眼.png"},
