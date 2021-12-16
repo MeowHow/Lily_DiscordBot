@@ -9,12 +9,22 @@ module.exports = new Command({
 		try {
 			//反應區
 			let role = message.member.roles.cache.has(config.CthulhuID);
+			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
 			if(role) {
-				message.channel.send({
-					files: [
-						"./Source/恭迎邪神.jpg"
-					]
-				});
+				if(rndInt > 6 && message.author.id == config.XgID) {
+					message.channel.send({
+						files: [
+							"./Source/茶几反擊.gif"
+						]
+					});
+				}
+				else {
+					message.channel.send({
+						files: [
+							"./Source/恭迎邪神.jpg"
+						]
+					});
+				}
 			} else {
 				message.reply('無信者，吾主不會眷顧於你。')
 			}

@@ -5,7 +5,7 @@ const config = require("../Data/config.json");
 
 module.exports = new Command({
 	name: "我要增值了",
-	description: "通用指令雷",
+	description: "此地雷有加入至cmdlist使其成為包含詞",
 	async run(message, args, client) {
 		try {
 			//反應區
