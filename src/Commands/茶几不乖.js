@@ -36,13 +36,10 @@ module.exports = new Command({
 			//Math.floor(Math.random() * (max - min + 1) + min)
 
 			let date = new Date();
-            console.log(date.getTime());
-            let seed = xmur3(String(date.getTime()));
-            // Output four 32-bit hashes to provide the seed for sfc32.
+			let Num = date.getTime() / date.getMilliseconds() + date.getSeconds();
+            let seed = xmur3(String(Num));
             let rand = sfc32(seed(), seed(), seed(), seed());
-            console.log(rand());
             let rndInt = Math.floor(rand() * (15 - 1 + 1) + 1);
-            console.log(rndInt);
 
 			if(rndInt <= 5) {
 				message.channel.send({
@@ -53,13 +50,13 @@ module.exports = new Command({
 			} else if (rndInt > 5 && rndInt <= 8) { 
 				message.channel.send({
 					files: [
-						"./Source/藍染茶几.png"
+						"./Source/卡姆KO.gif"
 					]
 				});
 			} else if (rndInt > 8 && rndInt <= 11) { 
 				message.channel.send({
 					files: [
-						"./Source/卡姆KO.gif"
+						"./Source/藍染茶几.png"
 					]
 				});
 			} else if (rndInt > 11 && rndInt <= 14) { 
