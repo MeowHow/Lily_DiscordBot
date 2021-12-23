@@ -2,7 +2,7 @@
 
 const Command = require("../Structures/Command.js");
 const config = require("../Data/config.json");
-let time = 0,Nowtime;
+let time = 0,Nowtime,cooling = 900000;
 module.exports = new Command({
 	name: "超位魔法",
 	description: "",
@@ -12,7 +12,7 @@ module.exports = new Command({
 				if(config.GodID.indexOf(message.author.id) != -1) {
 					let dt = new Date();
 					Nowtime = dt.getTime();
-					if(Nowtime - time > 900000) {
+					if(Nowtime - time > cooling) {
 						message.channel.send('確認神格，準備施術。');
 						message.channel.send({
 							files: [
@@ -21,7 +21,7 @@ module.exports = new Command({
 						});
 						time = Nowtime;
 					} else {
-						let Milliseconds = (900000 - (Nowtime - time)); // /60000
+						let Milliseconds = (cooling - (Nowtime - time)); // /60000
 						let seconds = Math.floor(Milliseconds/1000); 
 						let minutes = Math.floor(seconds/60); 
 						seconds = seconds - (minutes * 60);  
