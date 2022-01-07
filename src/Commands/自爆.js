@@ -43,19 +43,19 @@ module.exports = new Command({
                     if (rndInt <= 15) {
                         message.channel.send({
                             files: [
-                                "./Source/自爆_01.png"
+                                "./Source/自爆_01.gif"
                             ]
                         });
                     } else if (rndInt <= 75) {
                         message.channel.send({
                             files: [
-                                "./Source/自爆_01.png"
+                                "./Source/自爆_01.gif"
                             ]
                         });
                     } else {
                         message.channel.send({
                             files: [
-                                "./Source/自爆_03.png"
+                                "./Source/自爆_03.gif"
                             ]
                         });
                     }
