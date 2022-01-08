@@ -38,6 +38,8 @@ module.exports = new Command({
             //反應區
             if (message.author.id == config.XgID) {
                 let rndInt = Math.floor(Math.random() * 100)
+                let dt = new Date();
+                Nowtime = dt.getTime();
                 message.channel.send("驗證茶几身分成功......")
                 if (Nowtime - time > cooling) {
                     if (rndInt <= 15) {
@@ -59,6 +61,7 @@ module.exports = new Command({
                             ]
                         });
                     }
+                    time = Nowtime
                 } else {
                     let Milliseconds = (cooling - (Nowtime - time)); // /60000
                     let seconds = Math.floor(Milliseconds / 1000);
