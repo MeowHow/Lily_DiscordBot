@@ -26,7 +26,11 @@ module.exports = new Command({
 					});
 				}
 			} else {
-				message.reply('無信者，吾主不會眷顧於你。')
+				message.channel.send({
+					files: [
+						"./Source/無信者.png"
+					]
+				});
 			}
 		} catch (error) {
 			message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
