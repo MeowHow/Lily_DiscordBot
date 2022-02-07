@@ -7,7 +7,6 @@
 	"有人不乖": {"type": "fileL", "msg": "./Source/有人不乖.png"},
 	"你說對了": {"type": "fileL", "msg": "./Source/你說對了.png"},
 	"辛酸畫面": {"type": "fileL", "msg": "./Source/辛酸畫面.png"},
-	"到家": {"type": "fileL", "msg": "./Source/到家.png"},
 	"抽筋": {"type": "fileL", "msg": "./Source/抽筋.png"},
 	"信仰": {"type": "fileL", "msg": "./Source/克蘇魯天父.jpg"},
 	"看醫生": {"type": "fileL", "msg": "./Source/Doctor.mov"},

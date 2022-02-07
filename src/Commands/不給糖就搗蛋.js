@@ -22,7 +22,7 @@ module.exports = new Command({
 			} else if (rndInt > 10 && rndInt <= 12) {
 				message.channel.send("https://tenor.com/SxzM.gif");
 			} else {
-				message.channel.send("導彈發...等等，企鵝還在養\n https://tenor.com/bkU8A.gif");
+				message.channel.send("導彈發...等等，企鵝還在養\n https://tenor.com/QoOR.gif");
 			}
 		} catch (error) {
 			message.channel.send('我似乎該有反應，但貓豪寫錯程式了，不過貓豪還是很棒，uma<3。');
