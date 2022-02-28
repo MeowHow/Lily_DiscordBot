@@ -32,6 +32,8 @@
     "竹鼠使用拍拍": {"type": "file", "msg": "./Source/竹鼠使用拍拍.gif"},
     "卡姆咬人啦": {"type": "file", "msg": "./Source/卡姆咬人啦.gif"},
     "這就是頭香": {"type": "file", "msg": "./Source/這就是頭香.png"},
+    "卡姆穿不穿": {"type": "file", "msg": "./Source/卡姆穿不穿.png"},
+    "豸苗虫豪不乖": {"type": "file", "msg": "./Source/豸苗虫豪不乖.png"},
     "罵我拜託": {"type": "file", "msg": "./Source/罵我拜託.mov"},
     "我們來聽聽蘭尾的意見。": {"type": "msg", "msg": "雖然人類的性癖是自由的，但是我還是建議你去看一下醫生。"},
     "晚安": {"type": "msg", "msg": "https://tenor.com/bKCsG.gif"},

@@ -39,7 +39,7 @@ module.exports = new Command({
 			let Num = date.getTime() / date.getMilliseconds() + date.getSeconds();
             let seed = xmur3(String(Num));
             let rand = sfc32(seed(), seed(), seed(), seed());
-            let rndInt = Math.floor(rand() * (15 - 1 + 1) + 1);
+            let rndInt = Math.floor(rand() * (21 - 1 + 1) + 1);
 
 			if(rndInt <= 5) {
 				message.channel.send({
@@ -65,7 +65,19 @@ module.exports = new Command({
 						"./Source/踩火.gif"
 					]
 				});
-			} else if (rndInt == 15) { 
+			} else if (rndInt > 14 && rndInt <= 17) { 
+				message.channel.send({
+					files: [
+						"./Source/多學學.gif"
+					]
+				});
+			} else if (rndInt > 17 && rndInt <= 20) { 
+				message.channel.send({
+					files: [
+						"./Source/自由開火.gif"
+					]
+				});
+			} else if (rndInt == 21) { 
 				message.channel.send({
 					files: [
 						"./Source/火箭彈.png"
