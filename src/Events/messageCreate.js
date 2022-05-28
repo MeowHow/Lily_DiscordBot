@@ -6,6 +6,7 @@ const cmdlist = require("../Data/cmdlist.json");
 const Plist = require("../Data/Plist.json");
 const cmd_config = require("../Data/cmd_config.json");
 const cmd_list = require("../Data/cmd_list.json");
+const backup = require('discord-backup');
 var myDate;
 myDate = new Date();
 var newTime = myDate.getMinutes();
@@ -13,45 +14,14 @@ var oldTime = 0;
 var fire = false;
 var glory = false;
 
+var BackAdmID = "";
+var confirmT = false; //伺服器載入確認
+var backupID = ""; //backupID
+
 module.exports = new Event("messageCreate", (client, message) => {
 	
 	try {
 		if (message.author.bot) return;
-		//942087542101135370 企劃布告欄
-		//942590810212405328 入口
-		//942086356799225866 身分組選擇
-		//942086317167226890 聊天大廳
-		//943142702348894209 預告片片場
-		//943142756568690758 禮物盒廣場
-		//943144836742135808 禮物盒-進度或公告發布處
-		//943142816324915291 錄音室-太陽分部
-		//943144366350938182 太陽分部-進度或公告發布處
-		//943142926614163456 錄音室-旭日微光分部
-		//943144483913097257 旭日微光分部-進度或公告發布處
-		//943148021590417418 卡片and錄音繳交處
-		//943148587754340362 錄音室音檔繳交處-太陽
-		//943148678170943488 錄音室音檔繳交處-旭日微光
-		//943148945700421662 素材收集處
-		//943149313507328040 企劃內容疑問解答處
-		if( message.channel.id == '942087542101135370' || 
-		message.channel.id == '942590810212405328' || 
-		message.channel.id == '942086356799225866' || 
-		message.channel.id == '942086317167226890' || 
-		message.channel.id == '943142702348894209' || 
-		message.channel.id == '943142756568690758' || 
-		message.channel.id == '943144836742135808' || 
-		message.channel.id == '943142816324915291' || 
-		message.channel.id == '943144366350938182' || 
-		message.channel.id == '943142926614163456' || 
-		message.channel.id == '943144483913097257' || 
-		message.channel.id == '943148021590417418' || 
-		message.channel.id == '943148587754340362' || 
-		message.channel.id == '943148678170943488' || 
-		message.channel.id == '943148945700421662' || 
-		message.channel.id == '943149313507328040'|| 
-		message.channel.id == '944253407185739837') {
-			return;
-		}
 		//console.log(message.content);
 		//Math.floor(Math.random() * (max - min + 1) + min)
 		//console.log(Math.floor(Math.random() * (1 - 0 + 1) + 0))
@@ -68,6 +38,60 @@ module.exports = new Event("messageCreate", (client, message) => {
 		}
 		else {
 			
+			//載入
+			if(confirmT == true && message.author.id === BackAdmID && message.content == '確認'){
+				backupID = "";
+				BackAdmID = "";
+				confirmT = false;
+				/*
+				backup.setStorageFolder(process.cwd() + "\\Backups");
+				backup.fetch(backupID[1]).then(() => {
+			
+					backup.load(backupID[1], message.guild).then(() => {
+			
+						return message.author.send('Backup loaded successfully!');
+				
+					}).catch((err) => {
+				
+						if (err === 'No backup found')
+							return message.channel.send(':x: No backup found for ID '+backupID[1]+'!');
+						else
+							return message.author.send(':x: An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
+				
+					});
+			
+				}).catch((e) => {
+					return message.channel.send(':x: No backup found for ID '+backupID[1]+'!');
+				});
+				*/
+				console.log('123');
+				return;
+			}
+			else if(confirmT == true && message.author.id === BackAdmID && message.content != '確認'){
+				backupID = "";
+				BackAdmID = "";
+				confirmT = false;
+				return message.channel.send('載入取消');
+			}
+			else if(message.content.indexOf("載入伺服器") == 0){
+				backup.setStorageFolder(process.cwd() + "\\Backups");
+				backupID = message.content.split(/\s/);
+				backup.fetch(backupID[1]).then(() => {
+					let getID = message.author.id;
+					if (getID == config.MeowHowID || getID == config.MouseID){
+						BackAdmID = getID;
+						message.channel.send(':warning: 全部頻道、規則、設定將被清除並載入備份檔，請輸入"確認"來確定載入，或是輸入任何"確認"以外文字來取消。');
+						confirmT = true;
+						//console.log(backupID[1]);
+						//console.log(BackAdmID);
+					}
+				}).catch((e) => {
+					backupID = "";
+					return message.channel.send(':x: No backup found for ID '+backupID[1]+'!');
+				});
+				return;
+			}
+
 			//骰子
 			const dicetxt = message.content.toLowerCase();
 			if(dicetxt.indexOf("1d20") == 0 || dicetxt.indexOf("1d100") == 0){

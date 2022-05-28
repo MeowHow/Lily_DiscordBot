@@ -3,7 +3,7 @@
 const Command = require("../Structures/Command.js");
 const config = require("../Data/config.json");
 module.exports = new Command({
-	name: "恭迎錯字邪神",
+	name: "-停用-恭迎錯字邪神",
 	description: "此地雷有加入至cmdlist使其成為包含詞",
 	async run(message, args, client) {
 		try {

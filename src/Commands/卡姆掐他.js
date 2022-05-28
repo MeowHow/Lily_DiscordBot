@@ -4,16 +4,12 @@ const Command = require("../Structures/Command.js");
 const config = require("../Data/config.json");
 
 module.exports = new Command({
-	name: "卡姆掐他",
+	name: "-停用-卡姆掐他",
 	description: "掐人拉",
 	async run(message, args, client) {
 		try {
 			//反應區
-			let date = new Date();
-			let Num = date.getTime() / date.getMilliseconds() + date.getSeconds();
-            let seed = xmur3(String(Num));
-            let rand = sfc32(seed(), seed(), seed(), seed());
-            let rndInt = Math.floor(rand() * (10 - 1 + 1) + 1);
+			let rndInt = Math.floor(Math.random() * (10 - 1 + 1) + 1)
 			if(rndInt <= 8) {
 				message.channel.send({
 					files: [

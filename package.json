@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "dependencies": {
+    "discord-backup": "^3.2.1",
     "discord.js": "^13.3.0",
     "dotenv": "^10.0.0",
     "xhr2": "^0.2.1"
